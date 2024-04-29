@@ -11,7 +11,8 @@ Server:
 2. Once you're done building, run `docker run -itd -v servervol:/serverdata --network Docker-Network -p 8888:8888 --name server-container server-image`.
 
 **Note:** This step may not work sometimes. In which case, deploy busybox container in the Docker network and run `docker inspect Docker-Network`. Check for the busybox ip and comment the main funciton call in "send_data.py" and uncomment the ping line with busybox's ip address. Build the server image again and run. Check logs of the server-container using `docker logs server-container`. If you see pings, then close the server-container. Comment the ping line and uncomment the main function. Rebuild and run the container. This will fix the issue. I don't know why exactly this resolved the issue but pinging somehow fixes it.
-4. If you'd like to interact with the server-container to check the contents of it, `docker exec -it server-container sh` and `ls && cat random_data.txt`
+
+3. If you'd like to interact with the server-container to check the contents of it, `docker exec -it server-container sh` and `ls && cat random_data.txt`
 
 Client:
 1. With the server-container running with similar output as in my report, next navigate to the clientimage folder and run `docker build -t client-image .`
