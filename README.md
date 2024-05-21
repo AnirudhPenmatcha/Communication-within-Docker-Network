@@ -1,4 +1,4 @@
-# ECC Assignment 3
+Communicating between containers in the same Docker Network
 
 In order to run the containers there are a few steps to be performed first. 
 
